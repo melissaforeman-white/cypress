@@ -28,3 +28,10 @@
 Cypress.Commands.add('getDataTest', (dataTestSelector) => {
     return cy.get(`[data-test="${dataTestSelector}"]`)
 })
+
+Cypress.Commands.add('addGrudge', (grudge) => {
+    cy.get('[data-test="grudge-input"]').within(() => {
+        return cy.get('input').type(grudge);
+    })
+})
+
